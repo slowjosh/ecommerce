@@ -6,6 +6,31 @@
     <title>eCommerce Home Page</title>
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        /* Full height for the body */
+        body, html {
+            height: 100%;
+        }
+
+        /* Flexbox on body to handle sticky footer */
+        body {
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Content takes up the available space */
+        .content {
+            flex: 1;
+        }
+
+        /* Footer styling */
+        footer {
+            background-color: #343a40;
+            color: white;
+            padding: 15px;
+        }
+    </style>
 </head>
 <body>
 
@@ -28,8 +53,22 @@
                         <a class="nav-link" href="registration.html">Register</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Cart</a>
+                        <a class="nav-link" href="cart.html">Cart</a>
                     </li>
+
+                     <!-- Dropdown for Signed-in User -->
+                     <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            JohnDoe <!-- Replace with dynamic username -->
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="userDropdown">
+                            <li><a class="dropdown-item" href="dashboard.html">Dashboard</a></li>
+                            <li><a class="dropdown-item" href="profile.html">Profile</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="logout.html">Logout</a></li>
+                        </ul>
+                    </li>
+                    
                 </ul>
             </div>
         </div>
@@ -43,7 +82,7 @@
     </div>
 
     <!-- Product Categories -->
-    <div class="container my-5">
+    <div class="container content my-5">
         <h2 class="text-center mb-4">Shop by Category</h2>
         <div class="row">
             <div class="col-md-4">
@@ -77,7 +116,7 @@
     </div>
 
     <!-- Featured Products Section -->
-    <div class="container my-5" id="products">
+    <div class="container content my-5" id="products">
         <h2 class="text-center mb-4">Featured Products</h2>
         <div class="row">
             <div class="col-md-3">
@@ -122,7 +161,7 @@
             </div>
         </div>
     </div>
-
+    
     <!-- Footer -->
     <footer class="bg-dark text-white text-center py-3">
         <p>&copy; 2024 MyShop. All rights reserved.</p>
