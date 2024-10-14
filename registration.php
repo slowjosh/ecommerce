@@ -26,8 +26,8 @@
                     <?php } ?>
                         <form action="authregister.php" method="POST">
                             <div class="mb-3">
-                                <label for="fullName" class="form-label">Full Name</label>
-                                <input type="text" class="form-control" id="fullName" name="fullName" placeholder="Enter your full name" required>
+                                <label for="fullname" class="form-label">Full Name</label>
+                                <input type="text" class="form-control" id="fullname" name="fullname" placeholder="Enter your full name" required>
                             </div>
                             <div class="mb-3">
                                 <label for="username" class="form-label">Username</label>
