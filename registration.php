@@ -1,6 +1,15 @@
 <?php
-require_once("includes\header.php");
 session_start();
+require_once("includes\header.php");
+if(isset($_SESSION["mali"])){
+    $messErr = $_SESSION["mali"];
+    unset($_SESSION["mali"]);
+}
+if(isset($_SESSION["tama"])){
+    $messSuc = $_SESSION["tama"];
+    unset($_SESSION["tama"]);
+}
+
 ?>
 
     <!-- Navbar -->
@@ -18,27 +27,20 @@ require_once("includes\\navbar.php");
                         <h4>Create Your Account</h4>
                     </div>
                     <div class="card-body">
-                        <?php 
-                        if(isset($_GET["tama"])){
-                         ?>
+                    <?php if(isset($messSuc)){ ?>
                     <div class="alert alert-success alert-dismissible fade show" role="alert">
-                            <strong>Holy guacamole!</strong> tumama ka sa puso ko.
-                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                        </div>
-                        <?php 
-                         }
-                        ?>
-                         <?php 
-                            if(isset($_GET["mali"])){
-                            ?>
+                        <strong><?php echo $messSu; ?></strong> 
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                    <?php } ?>
+
+                    <?php if(isset($messErr)){ ?>
                     <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                            <strong>Holy guacamole!</strong> lagi kanalang mali.
-                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                        </div>
-                                <?php 
-                                }
-                                ?>
-                        <form action="authRegister.php" method="POST">
+                        <strong><?php echo $messErr; ?></strong> 
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                    <?php } ?>
+                        <form action="app/auth/Register.php" method="POST">
                             <div class="mb-3">
                                 <label for="fullName" class="form-label">Full Name</label>
                                 <input type="text" class="form-control" id="fullName" name="fullName" placeholder="Enter your full name" required>
@@ -69,6 +71,6 @@ require_once("includes\\navbar.php");
     </div>
 
     <!-- Bootstrap 5 JS Bundle -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+   
 </body>
 </html>

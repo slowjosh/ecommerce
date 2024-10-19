@@ -1,6 +1,12 @@
 <?php
-require_once("includes\header.php");
 session_start();
+require_once("includes\header.php");
+if(isset($_SESSION["mali"])){
+    $messErr = $_SESSION["mali"];
+    echo $messErr;
+    unset($_SESSION["mali"]);
+}
+
 ?>
     <!-- Navbar -->
     <?php
@@ -16,7 +22,17 @@ require_once("includes\\navbar.php");
                         <h4>Login to Your Account</h4>
                     </div>
                     <div class="card-body">
-                        <form action="authLogin.php" method="POST">
+                         <?php 
+                            if(isset($messErr)){
+                            ?>
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                            <strong>Holy guacamole!</strong> lagi kanalang mali.
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                                <?php 
+                                }
+                                ?>
+                        <form action="app/auth/Login.php" method="POST">
                             <div class="mb-3">
                                 <label for="username" class="form-label">username</label>
                                 <input type="text" class="form-control" id="username" name="username" placeholder="Enter your username" required>
@@ -42,6 +58,8 @@ require_once("includes\\navbar.php");
     
 
     <!-- Bootstrap 5 JS Bundle -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <?php 
+    require_once("includes/footer.php")
+    ?>
 </body>
 </html>

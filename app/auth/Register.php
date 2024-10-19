@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 $fullname= $_POST["fullName"];
 $username= $_POST["username"];
 $password= $_POST["password"];
@@ -9,7 +11,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
   
     if(trim($password) == trim($confirmPassword)){
     $host = "localhost";
-    $database = "ecommerce2";
+    $database = "ecommerse";
     $dbusername = "root";
     $dbpassword = "";
 
@@ -25,14 +27,16 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
         $stmt->bindParam(':p_password',$password);
         $password = password_hash(trim($password),PASSWORD_BCRYPT);
 
-        if( $stmt->execute()){
-            header("location: /registration.php?success=Registration Successful");
+        if($stmt->execute()){
+            header("location: /registration.php");
+            $_SESSION["tama"]="Registration successful";
             exit;
+        } else { 
+            header("location: /registration.php");
+            $_SESSION["mali"]="Insert error";
+            exit;
+
         }
-     else{
-        header("location: /registration.php?error=Insert Error");
-        exit;
-    }
 
     } catch (Exception $e){
     echo "Connection Failed: " . $e->getMessage();
@@ -40,7 +44,10 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 
         }
             else{
-                header( "location: registration.php?mali= password is not the same");
+                header("location: /registration.php");
+                $_SESSION["mali"]="Insert error";
+                exit;
+
             }
             
                 }

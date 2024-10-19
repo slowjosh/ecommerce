@@ -1,15 +1,15 @@
-    <?php
+<?php
 
-
+session_start();
 $username= $_POST["username"];
 $password= $_POST["password"];
 
-session_start();
+
 
 if($_SERVER["REQUEST_METHOD"]=="POST"){
   
     $host = "localhost";
-    $database = "ecommerce2";
+    $database = "ecommerse";
     $dbusername = "root";
     $dbpassword = "";
 
@@ -27,19 +27,23 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 
         if($user){
             if(password_verify($password, $user[0]["password"])){
-                echo"login successfull"  ;
+                header("location: /index.php");
                 $_SESSION["fullname"]=$user[0]["fullname"];
-               } else{
-                    echo "password not match";
-
-
-
+                $_SESSION["right"]="Registration successful";
+                exit;
+            } else{
+                header("location: /login.php");
+                $_SESSION["wrong"]="Insert error";
+                exit;
                     // hello world
-                }
+            }
 
             
-            }else{
-            echo"user not exist";
+        }else{
+            
+            header("location: /login.php");
+            $_SESSION["wrong"]="Insert error";
+            exit;
         }
         
     
