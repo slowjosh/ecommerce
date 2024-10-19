@@ -1,9 +1,8 @@
 <?php 
+session_start();
 //recevived user input
 $username = $_POST["username"];
 $password = $_POST["password"];
-
-session_start();
 
 
 if($_SERVER["REQUEST_METHOD"] == "POST"){
@@ -27,14 +26,21 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
         if($users){
            if(password_verify($password, $users[0]["password"])){
-               echo "login successful";
+            header("location: /index.php");
                $_SESSION["fullname"] = $users[0]["fullname"];
                
+               $_SESSION["success"] = "Registration successful";
+               exit;
            } else{
-               echo "password did not match";
+            header("location: /login.php");
+            $_SESSION["error"] = "Insert error";
+             exit;
            }
-        } else{
+        }   else{
             echo "user not exist";
+            header("location: /login.php");
+            $_SESSION["error"] = "Insert error";
+            exit;
         }
         
     
