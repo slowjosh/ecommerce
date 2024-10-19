@@ -1,4 +1,4 @@
-<?php
+    <?php
 
 
 $username= $_POST["username"];
@@ -26,15 +26,18 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 
 
         if($user){
-            if($password == $user[0]["password"]){
+            if(password_verify($password, $user[0]["password"])){
                 echo"login successfull"  ;
                 $_SESSION["fullname"]=$user[0]["fullname"];
                } else{
                     echo "password not match";
-                }
-        
-            echo"user found";
 
+
+
+                    // hello world
+                }
+
+            
             }else{
             echo"user not exist";
         }

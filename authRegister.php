@@ -23,9 +23,17 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
         $stmt->bindParam(':p_fullName',$fullname);
         $stmt->bindParam(':p_username',$username);
         $stmt->bindParam(':p_password',$password);
-        $stmt->execute();
+        $password = password_hash(trim($password),PASSWORD_BCRYPT);
 
-        header( "location: registration.php?tama= password is not the same");
+        if( $stmt->execute()){
+            header("location: /registration.php?success=Registration Successful");
+            exit;
+        }
+     else{
+        header("location: /registration.php?error=Insert Error");
+        exit;
+    }
+
     } catch (Exception $e){
     echo "Connection Failed: " . $e->getMessage();
         }
