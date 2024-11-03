@@ -57,5 +57,5 @@ require_once("includes\\navbar.php");
     </div>
     
     
-    <?php require_once(ROOT_DIR."includes\footer.php")?>
+    <?php require_once(ROOT_DIR."/includes/footer.php")?>
  

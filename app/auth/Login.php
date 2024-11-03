@@ -1,9 +1,10 @@
 <?php
-require_once($_SERVER["DOCUMENT_ROOT"]."/app/config/Directories.php")
-;$username= $_POST["username"];
+session_start();
+require_once($_SERVER["DOCUMENT_ROOT"]."/app/config/Directories.php");
+$username= $_POST["username"];
 $password= $_POST["password"];
 
-session_start();
+
 
 include('../config/DatabaseConnect.php');
 
@@ -33,12 +34,12 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
                 $_SESSION["fullname"]=$user[0]["fullname"];
                 $_SESSION["is_admin"]=$user[0]["is_admin"];
 
-                $_SESSION["right"]="Registration successful";
+                $_SESSION["tama"]="Registration successful";
                 header("location: /index.php");
                 exit;
             } else{
                 header("location: /login.php");
-                $_SESSION["wrong"]="Insert error";
+                $_SESSION["mali"]="Insert error";
                 exit;
                     // hello world
             }

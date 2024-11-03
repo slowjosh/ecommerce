@@ -72,5 +72,5 @@ require_once("includes\\navbar.php");
     </div>
 
     <!-- Bootstrap 5 JS Bundle -->
-    <?php require_once(ROOT_DIR."includes\footer.php")?>
+    <?php require_once(ROOT_DIR."/includes/footer.php")?>
    
