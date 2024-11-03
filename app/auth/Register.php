@@ -11,7 +11,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
   
     if(trim($password) == trim($confirmPassword)){
     $host = "localhost";
-    $database = "ecommerse";
+    $database = "ecommerce2";
     $dbusername = "root";
     $dbpassword = "";
 
@@ -29,7 +29,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 
         if($stmt->execute()){
             header("location: /registration.php");
-            $_SESSION["tama"]="Registration successful";
+            $_SESSION["tama"]="All goods";
             exit;
         } else { 
             header("location: /registration.php");

@@ -1,4 +1,5 @@
 <?php
+require_once($_SERVER["DOCUMENT_ROOT"]."/app/config/Directories.php");
 require_once("includes\header.php");
 session_start();
 ?>

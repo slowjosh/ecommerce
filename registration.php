@@ -1,5 +1,6 @@
 <?php
 session_start();
+require_once($_SERVER["DOCUMENT_ROOT"]."/app/config/Directories.php");
 require_once("includes\header.php");
 if(isset($_SESSION["mali"])){
     $messErr = $_SESSION["mali"];
@@ -29,7 +30,7 @@ require_once("includes\\navbar.php");
                     <div class="card-body">
                     <?php if(isset($messSuc)){ ?>
                     <div class="alert alert-success alert-dismissible fade show" role="alert">
-                        <strong><?php echo $messSu; ?></strong> 
+                        <strong><?php echo $messSuc; ?></strong> 
                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     </div>
                     <?php } ?>
@@ -71,6 +72,5 @@ require_once("includes\\navbar.php");
     </div>
 
     <!-- Bootstrap 5 JS Bundle -->
+    <?php require_once(ROOT_DIR."includes\footer.php")?>
    
-</body>
-</html>
