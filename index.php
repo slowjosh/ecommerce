@@ -21,7 +21,7 @@ require_once("includes\\navbar.php");
         <div class="row">
             <div class="col-md-4">
                 <div class="card">
-                    <img src="https://via.placeholder.com/400x250" class="card-img-top" alt="Category 1">
+                    <img src="public/uploads/products/gpu.jpg" class="card-img-top" alt="Category 1">
                     <div class="card-body text-center">
                         <h5 class="card-title">Electronics</h5>
                         <a href="#" class="btn btn-primary">Shop Now</a>
@@ -30,7 +30,7 @@ require_once("includes\\navbar.php");
             </div>
             <div class="col-md-4">
                 <div class="card">
-                    <img src="https://via.placeholder.com/400x250" class="card-img-top" alt="Category 2">
+                    <img src="public/uploads/products/cpu.jpg" class="card-img-top" alt="Category 2">
                     <div class="card-body text-center">
                         <h5 class="card-title">Fashion</h5>
                         <a href="#" class="btn btn-primary">Shop Now</a>
@@ -39,7 +39,7 @@ require_once("includes\\navbar.php");
             </div>
             <div class="col-md-4">
                 <div class="card">
-                    <img src="https://via.placeholder.com/400x250" class="card-img-top" alt="Category 3">
+                    <img src="public/uploads/products/mobo.png" class="card-img-top" alt="Category 3">
                     <div class="card-body text-center">
                         <h5 class="card-title">Home & Kitchen</h5>
                         <a href="#" class="btn btn-primary">Shop Now</a>
@@ -55,7 +55,7 @@ require_once("includes\\navbar.php");
         <div class="row">
             <div class="col-md-3">
                 <div class="card">
-                    <img src="https://via.placeholder.com/250x250" class="card-img-top" alt="Product 1">
+                    <img src="public/uploads/products/psu.jpg" class="card-img-top" alt="Product 1">
                     <div class="card-body text-center">
                         <h5 class="card-title">Product 1</h5>
                         <p class="card-text">$49.99</p>
@@ -65,7 +65,7 @@ require_once("includes\\navbar.php");
             </div>
             <div class="col-md-3">
                 <div class="card">
-                    <img src="https://via.placeholder.com/250x250" class="card-img-top" alt="Product 2">
+                    <img src="public/uploads/products/ram.jpg" class="card-img-top" alt="Product 2">
                     <div class="card-body text-center">
                         <h5 class="card-title">Product 2</h5>
                         <p class="card-text">$79.99</p>
@@ -75,7 +75,7 @@ require_once("includes\\navbar.php");
             </div>
             <div class="col-md-3">
                 <div class="card">
-                    <img src="https://via.placeholder.com/250x250" class="card-img-top" alt="Product 3">
+                    <img src="public/uploads/products/gpu.jpg" class="card-img-top" alt="Product 3">
                     <div class="card-body text-center">
                         <h5 class="card-title">Product 3</h5>
                         <p class="card-text">$29.99</p>
@@ -85,7 +85,7 @@ require_once("includes\\navbar.php");
             </div>
             <div class="col-md-3">
                 <div class="card">
-                    <img src="https://via.placeholder.com/250x250" class="card-img-top" alt="Product 4">
+                    <img src="public/uploads/products/mobo.png" class="card-img-top" alt="Product 4">
                     <div class="card-body text-center">
                         <h5 class="card-title">Product 4</h5>
                         <p class="card-text">$99.99</p>
